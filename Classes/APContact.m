@@ -38,6 +38,8 @@
         {
             _emails = [self arrayProperty:kABPersonEmailProperty fromRecord:recordRef];
         }
+        if (fieldMask & APContactFieldFirstNamePhonetic) {
+        }
         if (fieldMask & APContactFieldPhoto)
         {
             _photo = [self imagePropertyFullSize:YES fromRecord:recordRef];
@@ -45,6 +47,12 @@
         if (fieldMask & APContactFieldThumbnail)
         {
             _thumbnail = [self imagePropertyFullSize:NO fromRecord:recordRef];
+        }
+        if (fieldMask & APContactFieldFirstNamePhonetic) {
+            _firstNamePhonetic = [self stringProperty:kABPersonFirstNamePhoneticProperty fromRecord:recordRef];
+        }
+        if (fieldMask & APContactFieldLastNamePhonetic) {
+            _lastNamePhonetic = [self stringProperty:kABPersonLastNamePhoneticProperty fromRecord:recordRef];
         }
     }
     return self;

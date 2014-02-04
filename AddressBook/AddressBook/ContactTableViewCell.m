@@ -49,7 +49,7 @@
 {
     if (contact.firstName && contact.lastName)
     {
-        return [NSString stringWithFormat:@"%@ %@", contact.firstName, contact.lastName];
+        return [NSString stringWithFormat:@"%@ %@ (%@ %@)", contact.firstName, contact.lastName, contact.firstNamePhonetic, contact.lastNamePhonetic];
     }
     else if (contact.firstName || contact.lastName)
     {

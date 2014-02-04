@@ -22,18 +22,21 @@ typedef BOOL(^APContactFilterBlock)(APContact *contact);
 
 typedef NS_OPTIONS(NSUInteger , APContactField)
 {
-    APContactFieldFirstName     = 1 << 0,
-    APContactFieldLastName      = 1 << 1,
-    APContactFieldCompany       = 1 << 2,
-    APContactFieldPhones        = 1 << 3,
-    APContactFieldEmails        = 1 << 4,
-    APContactFieldPhoto         = 1 << 5,
-    APContactFieldThumbnail     = 1 << 6,
+    APContactFieldFirstName         = 1 << 0,
+    APContactFieldLastName          = 1 << 1,
+    APContactFieldCompany           = 1 << 2,
+    APContactFieldPhones            = 1 << 3,
+    APContactFieldEmails            = 1 << 4,
+    APContactFieldPhoto             = 1 << 5,
+    APContactFieldThumbnail         = 1 << 6,
+    APContactFieldFirstNamePhonetic = 1 << 7,
+    APContactFieldLastNamePhonetic  = 1 << 8,
     APContactFieldDefault       = APContactFieldFirstName | APContactFieldLastName |
                                   APContactFieldPhones,
     APContactFieldAll           = APContactFieldDefault | APContactFieldCompany |
                                   APContactFieldEmails | APContactFieldPhoto |
-                                  APContactFieldThumbnail
+                                  APContactFieldThumbnail | APContactFieldFirstNamePhonetic |
+                                  APContactFieldLastNamePhonetic
 };
 
 #endif
